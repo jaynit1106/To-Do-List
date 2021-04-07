@@ -27,8 +27,10 @@
 						
 						</tr>`;
 					})
-				tablebody.innerHTML=str;}
-			}
+					tablebody.innerHTML=str;}
+				}else{
+					console.log("empty")
+				}
 			function deleted(itemindex){
 				console.log("hello");
 				data=localStorage.getItem('item');
