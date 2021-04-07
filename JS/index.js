@@ -22,9 +22,11 @@ $(document).ready(function(){
 								})
 								tablebody.innerHTML=str;
 					}
-				}else{
-					console.log("empty")
+				
+				else{
+					console.log("empty");
 				}
+			}
 	function update(){
 		title=document.getElementById("title").value;
 		desc=document.getElementById("description").value;
