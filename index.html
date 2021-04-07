@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO-LIST</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="./JS/index.js"></script>
+	<script type="text/javascript">
+			function refresh(){
+				let tablebody=document.getElementById('tbody1');
+				let str='';
+				data=localStorage.getItem('item');
+				data=JSON.parse(data);
+				data.forEach((element,index)=>{
+					str +=`
+					<tr>
+						<td class="td">${index+1}</td>
+						<td class="td">${element[0]}</td>
+						<td class="td">${element[1]}</td>
+						<td class="delete td">
+						<button type="button" id="remove" onclick="deleted(${index})">DELETE</button>
+						</td>
+		
+					</tr>`;
+				})
+				tablebody.innerHTML=str;
+			}
+			function deleted(itemindex){
+				console.log("hello");
+				data=localStorage.getItem('item');
+				data=JSON.parse(data);
+				data.splice(itemindex,1);
+				localStorage.setItem('item',JSON.stringify(data));
+				refresh();
+			}
+	</script>
+</head>
+<link rel="stylesheet" type="text/css" href="./CSS/style.css">
+<body>
+	<div class="container" >
+		<nav class="nav">
+			<div class="left">
+				<a href="index.html" style="color: #008B8B">HOME</a>
+			</div>
+		</nav>
+		<div class="data">
+			<h2>TODO-LIST</h2>
+			<label class="title">Title</label>
+			<br>
+			<input type="text"  size="70" id="title">
+			<br>
+			<br>
+			<label class="description">Description</label>
+			<br>
+			<textarea id="description" rows="4" cols="64"></textarea>
+			<br>
+			<br>
+			<button class="submit" id="add" type="button">SUBMIT</button>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+		<div class="table">
+			<table class="table1">
+				<thead>
+					<tr>
+						<th scope="col" >S_id</th>
+						<th scope="col">Title</th>
+						<th scope="col">Description</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody class="tbody" id="tbody1">
+					<tr>
+						<!-- <td>1</td>
+						<td>HomeWork</td>
+						<td>Submit Before 5 pm</td>
+						<td class="delete">
+							<button onclick="index.html" type="button">DELETE</button>
+						</td> -->
+					</tr>
+					
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			
+		</div>
+		<div class="bottom">
+			<p class="empty"></p>
+			<a class="footer" href="https://www.linkedin.com/in/jaynit-patel-74914820a/">LinkedIn</a>
+		  	<a class="footer-link" href="https://www.instagram.com/pateljaynit/">Instagram</a>
+		  	<a class="footer-link" href="https://github.com/jaynit1106">GitHub</a>
+		  	<!-- <p class="india">Made In India</p> -->
+		  	<p class="end">© 2021 Jaynit @ All rights reserved</p>
+
+		</div>
+		
+	</div>
+
+</body>
+</html>
