@@ -7,7 +7,7 @@ $(document).ready(function(){
 				let str='';
 				data=localStorage.getItem('item');
 				data=JSON.parse(data);
-				if(data!=null){
+				if(data!=undefined){
 								data.forEach((element,index)=>{
 									str +=`
 									<tr>
