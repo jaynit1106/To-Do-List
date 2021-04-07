@@ -7,20 +7,22 @@ $(document).ready(function(){
 				let str='';
 				data=localStorage.getItem('item');
 				data=JSON.parse(data);
-				data.forEach((element,index)=>{
-					str +=`
-					<tr>
-						<td class="td">${index+1}</td>
-						<td class="td">${element[0]}</td>
-						<td class="td">${element[1]}</td>
-						<td class="delete td">
-						<button type="button" id="remove" onclick="deleted(${index})">DELETE</button>
-						</td>
-		
-					</tr>`;
-				})
-				tablebody.innerHTML=str;
-	}
+				if(data!=null){
+								data.forEach((element,index)=>{
+									str +=`
+									<tr>
+										<td class="td">${index+1}</td>
+										<td class="td">${element[0]}</td>
+										<td class="td">${element[1]}</td>
+										<td class="delete td">
+										<button type="button" id="remove" onclick="deleted(${index})">DELETE</button>
+										</td>
+						
+									</tr>`;
+								})
+								tablebody.innerHTML=str;
+					}
+				}
 	function update(){
 		title=document.getElementById("title").value;
 		desc=document.getElementById("description").value;
