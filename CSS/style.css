@@ -12,6 +12,7 @@ body{
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 .container{
+	display: block;
 
 	background-color: linen;
 	background-repeat: no-repeat;
@@ -24,7 +25,13 @@ body{
 	padding: 0;
 	margin: 0;
 }
-
+.data input{
+	size: 70;
+}
+.data textarea{
+	rows:4;
+	cols:64;
+}
 .container .nav{
 	color: white;
 	background-color: black;
@@ -185,4 +192,60 @@ body{
 
 .bottom .empty{
 	padding-top: 40px;
+}
+
+
+@media (max-width: 480px){
+
+	.data input{
+		width: 229px;
+	}
+	.data textarea{
+		width: 234px;
+	}
+	.data .title {
+	    font-size: 1rem;
+	    color: black;
+	    padding-top: 20px;
+	    margin-left: -203px;
+	}
+	.data .description {
+	    font-size: 1rem;
+	    color: black;
+	    padding-top: 20px;
+	    margin-left: -141px;
+	}
+	.table .table1 th {
+	    border: ridge;
+	    border-color: black;
+	    border-width: 1px;
+	    color: black;
+	    padding-right: 31px;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	}
+	.bottom .footer {
+	    color: #008B8B;
+	    font-family: 'Montserrat', sans-serif;
+	    align-items: center;
+	    margin-left: 29px;
+	    text-decoration: none;
+	}
+	.bottom .end {
+	    margin-left: 49px;
+	    color: #008B8B;
+	    align-items: center;
+	    padding-top: 5px;
+	    padding-bottom: 40px;
+	}
+	.table {
+	    padding-left: 5px;
+	}
+
+
+
+
+
+
+
 }
